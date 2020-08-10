@@ -16,14 +16,14 @@
    <main role="main">
       <div class="container mt-3" id="demo">
          <div>
-           {{-- <div class="col-md-3">
+           <div class="col-md-3">
              <div class="mt-1 mb-1 pt-1 pb-1">
                  <div class="card shadow-sm bg-white border-0 mb-3 rounded-0 categorylist">
                     <h5 class="card-header bg-white link-color">{{ Helper::translation(1932,$translate) }}</h5>
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-12 categorybox">
-                        <div 
+                        <div
 						   class="jplist-group"
 						   data-control-type="checkbox-group-filter"
 						   data-control-action="filter"
@@ -59,7 +59,7 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-12">
-                          <div 
+                          <div
 						   class="jplist-group"
 						   data-control-type="checkbox-group-filter"
 						   data-control-action="filter"
@@ -76,7 +76,7 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-12">
-                          <div 
+                          <div
 						   class="jplist-group"
 						   data-control-type="checkbox-group-filter"
 						   data-control-action="filter"
@@ -86,7 +86,7 @@
                             <input type="checkbox" name="product_type" data-path=".digital" id="digital"> {{ Helper::translation(2167,$translate) }}<br/>
                            </div>
                         </div>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -97,15 +97,15 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-12">
-                        <div 
+                        <div
 						   class="jplist-group"
 						   data-control-type="checkbox-group-filter"
 						   data-control-action="filter"
 						   data-control-name="themes">
                         @foreach($attribute->attributevalue as $product_value)
                             <input type="checkbox" name="attribute[]" value="{{ $product_value->attribute_value_id }}" data-path=".{{ $product_value->attribute_value_id }}" id="{{ $product_value->attribute_value_id }}"> {{ $product_value->attribute_value }}<br/>
-                        @endforeach 
-                        </div>   
+                        @endforeach
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -113,7 +113,7 @@
                   @endforeach
                  @endif
                  </div>
-         	</div> --}}
+         	</div>
             <div class="col-md-12">
                     @foreach($categories['display'] as $menu)
                     <input type="checkbox" name="category[]" value="cat-{{ $menu->cat_id }}" data-path=".cat-{{ $menu->cat_id }}" id="cat-{{ $menu->cat_id }}"> {{ $menu->category_name }}<br/>
@@ -123,12 +123,12 @@
                           @endforeach
                        @endif
                     @endforeach
-                    
-                   
-              {{-- <div class="mt-1 mb-1 pt-1 pb-1">
+
+
+              <div class="mt-1 mb-1 pt-1 pb-1">
                   <div class="row list" align="center">
                            @php $z = 1; @endphp
-                              @foreach($shop['product'] as $product) 
+                              @foreach($shop['product'] as $product)
                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-2 pb-2 list-item">
                                    <div class="product-grid2">
                                     <div class="product-image2">
@@ -151,7 +151,7 @@
             @php if($product->product_condition == 'new'){ $badg = "badge badge-warning"; } else { $badg = "badge badge-secondary"; } @endphp
             @if($product->product_condition != "")<div class="mt-2">{{ Helper::translation(1950,$translate) }} : <span class="{{ $badg }}">{{ $product->product_condition }}</span></div>@endif
                                     <div class="mt-3">@if($product->product_price != 0)<span @if($product->product_offer_price != 0) class="fs16 offer-price red-color" @else class="fs32" @endif>{{ $allsettings->site_currency_symbol }}{{ $product->product_price }}</span>@endif @if($product->product_offer_price != 0)<span class="fs32">{{ $allsettings->site_currency_symbol }}{{ $product->product_offer_price }}</span>@endif</div>                                <p class="mt-3">
-                                    {{ $product->product_short_desc }} 
+                                    {{ $product->product_short_desc }}
                                     </p>
                                     <p><a href="{{ URL::to('/product') }}/{{ $product->product_slug }}" class="btn button-color">{{ Helper::translation(2065,$translate) }}</a></p>
                                     </div>
@@ -212,7 +212,7 @@
                                             <span class="price like">{{ $allsettings->site_currency_symbol }}{{ $product->product_price }}</span>
                                         </div>
                                         <p class="d-none">
-                                        @php 
+                                        @php
                                         $var=explode(',',$product->product_category);
                                         @endphp
                                         @foreach($var as $row)
@@ -229,28 +229,28 @@
                                         </p>
                                         </div>
                                     </div>
-                                   @php $z++; @endphp      
+                                   @php $z++; @endphp
                             @endforeach
                           </div>
                         <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 text-right">  
-                                    <div 
-                                       class="jplist-label customlable" 
-                                       data-type="Page {current} of {pages}" 
-                                       data-control-type="pagination-info" 
-                                       data-control-name="paging" 
+                              <div class="col-lg-12 col-md-12 col-sm-12 text-right">
+                                    <div
+                                       class="jplist-label customlable"
+                                       data-type="Page {current} of {pages}"
+                                       data-control-type="pagination-info"
+                                       data-control-name="paging"
                                        data-control-action="paging">
-                                    </div>	
-                                    <div 
-                                       class="jplist-pagination" 
-                                       data-control-type="pagination" 
-                                       data-control-name="paging" 
+                                    </div>
+                                    <div
+                                       class="jplist-pagination"
+                                       data-control-type="pagination"
+                                       data-control-name="paging"
                                        data-control-action="paging"
                                        data-items-per-page="{{ $allsettings->product_per_page }}">
-                                    </div>	
+                                    </div>
                               </div>
-                         </div>  
-              </div> --}}
+                         </div>
+              </div>
          	</div>
          </div>
       </div>
